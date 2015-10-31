@@ -11,67 +11,26 @@ require('debug-dude')('service').warn('require your app entry point plz');
 
 import React from "react";
 import ReactDOM from "react-dom";
-import t from "tcomb-form";
-var Form = t.form.Form;
 
-var Address = t.struct({
-    street: t.String,
-    number: t.String,
-    city: t.String,
-    zip: t.String,
-    country: t.String
-});
+import ReactTabs from "react-tabs";
+var Tab = ReactTabs.Tab;
+var Tabs = ReactTabs.Tabs;
+var TabList = ReactTabs.TabList;
+var TabPanel = ReactTabs.TabPanel;
 
-var OrderItem = t.struct({
-    description: t.String,
-    price: t.Number,
-    quantity: t.Number
-})
-
-var Order = t.struct({
-    description: t.String,
-    activatedDate: t.Date,
-    billingAddress: Address,
-    items: t.list(OrderItem)
-});
+import BasicOrderForm from "./basic-order-form.js";
 
 class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            orderFormValue: {
-                activatedDate: new Date()
-            }
-        }
-    }
-    save() {
-        var value = this.refs.form.getValue();
-        if (value)
-            console.log(value);
-        else {
-            var validationResult = this.refs.form.validate();
-            console.log(validationResult);
-        }
-    }
-    onChange(value, path, kind){
-        console.log({
-            value,
-            path,
-            kind
-        });
-        this.setState({orderFormValue:value});
-    }
     render() {
         return (
-            <div>
-                <Form
-                    ref="form"
-                    type={Order}
-                    value={this.state.orderFormValue}
-                    onChange={this.onChange.bind(this)}
-                />
-                <button onClick={this.save.bind(this)}>Save</button>
-            </div>
+            <Tabs>
+                <TabList>
+                    <Tab>Basic</Tab>
+                </TabList>
+                <TabPanel>
+                    <BasicOrderForm />
+                </TabPanel>
+            </Tabs>
         );
     }
 }

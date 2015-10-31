@@ -19,16 +19,21 @@ var TabList = ReactTabs.TabList;
 var TabPanel = ReactTabs.TabPanel;
 
 import BasicOrderForm from "./basic-order-form.js";
+import OptionsOrderForm from "./options-order-form.js";
 
 class App extends React.Component {
     render() {
         return (
-            <Tabs>
+            <Tabs selectedIndex={1}>
                 <TabList>
                     <Tab>Basic</Tab>
+                    <Tab>Options</Tab>
                 </TabList>
                 <TabPanel>
                     <BasicOrderForm />
+                </TabPanel>
+                <TabPanel>
+                    <OptionsOrderForm />
                 </TabPanel>
             </Tabs>
         );

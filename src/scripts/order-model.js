@@ -17,6 +17,13 @@ var OrderStatus = t.enums({
     "FIN": "Finished"
 })
 
+var PaymentMethods = t.enums({
+    "CRD": "Credit card",
+    "DBT": "Debit card",
+    "PPL": "Paypal",
+    "CSH": "Cash"
+})
+
 var Address = t.struct({
     street: t.String,
     number: t.String,
@@ -37,7 +44,8 @@ var Order = t.struct({
     isReduction: t.Boolean,
     status: OrderStatus,
     billingAddress: Address,
-    items: t.list(OrderItem)
+    items: t.list(OrderItem),
+    payments: t.list(PaymentMethods)
 });
 
 export default Order;

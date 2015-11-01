@@ -27,7 +27,7 @@ import ZavrsavanjeZadatkaOdrzavanja from "./upravljanje-zadacima-odrzavanja/zavr
 class App extends React.Component {
     render() {
         return (
-            <Tabs selectedIndex={2}>
+            <Tabs selectedIndex={3}>
                 <TabList>
                     <Tab>Basic</Tab>
                     <Tab>Options</Tab>

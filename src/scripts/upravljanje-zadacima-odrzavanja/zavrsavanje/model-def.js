@@ -1,6 +1,6 @@
 import t from "tcomb-form";
 
-var TipElementa = t.struct({
+/*var TipElementa = t.struct({
     naziv: t.String
 });
 
@@ -18,7 +18,7 @@ var SablonOdrzavanja = t.struct({
 var ElementOdrzavanja = t.struct({
     naziv: t.String,
     tip: TipElementa
-});
+});*/
 
 var Period = t.struct({
     od: t.Date,
@@ -32,8 +32,9 @@ var Zaposleni = t.struct({
 
 /*ili ZavrsavanjeZadatkaOdrzavanja*/
 var ZadatakOdrzavanja = t.struct({
-    sablon: SablonOdrzavanja,
-    elementOdrzavanja: ElementOdrzavanja,
+    tipElementaOdrzavanja: t.String,
+    elementOdrzavanja: t.String,
+    vrstaOdrzavanja: t.String,
     dodeljeniPeriod: Period,
     brojRadnogNaloga: t.String,
     odgovornoLice: Zaposleni,

@@ -1,16 +1,7 @@
 export default {
-    sablon: {
-        tipElementa: {
-            naziv: "TS 110 kV"
-        },
-        vrstaOdrzavanja: "Revizija"
-    },
-    elementOdrzavanja: {
-        naziv: "TS Backi Petrovac",
-        tip: {
-            naziv: "TS 110 kV"
-        }
-    },
+    tipElementaOdrzavanja: "TS 110 kV",
+    elementOdrzavanja: "TS Backi Petrovac",
+    vrstaOdrzavanja: "Revizija",
     dodeljeniPeriod: {
         od: new Date(2015, 10, 1),
         do: new Date(2015, 12, 31)

@@ -36,6 +36,7 @@ class OptionsOrderForm extends React.Component {
         var options = {
             auto: "placeholders",
             order: ["status", "description", "activatedDate", "isReduction", "items", "billingAddress", "payments"],
+            i18n: Object.assign({}, t.form.Form.i18n, {optional: "", required: "*"}),
             fields: {
                 status: {
                     nullOption: {value: "", text: "Choose status..."},
@@ -46,6 +47,17 @@ class OptionsOrderForm extends React.Component {
                 },
                 activatedDate: {
                     order: ["D", "M", "YY"]
+                },
+                billingAddress: {
+                  fields: {
+                      street: {
+                          error: function (value, path, context) {
+                              console.log("street error func arguments:")
+                              console.log({value, path, context});
+                              return value + " is a bad value for street";
+                          }
+                      }
+                  }
                 },
                 items: {
                     auto: "none",

@@ -22,6 +22,8 @@ import BasicOrderForm from "./basic-order-form.js";
 import OptionsOrderForm from "./options-order-form.js";
 import CustomOrderForm from "./custom-order-form.js";
 
+import ZavrsavanjeZadatkaOdrzavanja from "./upravljanje-zadacima-odrzavanja/zavrsavanje/view.js";
+
 class App extends React.Component {
     render() {
         return (
@@ -30,6 +32,7 @@ class App extends React.Component {
                     <Tab>Basic</Tab>
                     <Tab>Options</Tab>
                     <Tab>Custom</Tab>
+                    <Tab>Zavrsavanja zadatka odrzavanja</Tab>
                 </TabList>
                 <TabPanel>
                     <BasicOrderForm />
@@ -39,6 +42,9 @@ class App extends React.Component {
                 </TabPanel>
                 <TabPanel>
                     <CustomOrderForm />
+                </TabPanel>
+                <TabPanel>
+                    <ZavrsavanjeZadatkaOdrzavanja />
                 </TabPanel>
             </Tabs>
         );

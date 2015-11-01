@@ -20,20 +20,25 @@ var TabPanel = ReactTabs.TabPanel;
 
 import BasicOrderForm from "./basic-order-form.js";
 import OptionsOrderForm from "./options-order-form.js";
+import CustomOrderForm from "./custom-order-form.js";
 
 class App extends React.Component {
     render() {
         return (
-            <Tabs selectedIndex={1}>
+            <Tabs selectedIndex={2}>
                 <TabList>
                     <Tab>Basic</Tab>
                     <Tab>Options</Tab>
+                    <Tab>Custom</Tab>
                 </TabList>
                 <TabPanel>
                     <BasicOrderForm />
                 </TabPanel>
                 <TabPanel>
                     <OptionsOrderForm />
+                </TabPanel>
+                <TabPanel>
+                    <CustomOrderForm />
                 </TabPanel>
             </Tabs>
         );
